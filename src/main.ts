@@ -1,7 +1,7 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+/// <reference types="@types/google.accounts" />
 
-import { AppModule } from './app/app.module';
+import { bootstrapApplication } from '@angular/platform-browser';
 
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch((err) => console.error(err));
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, { providers: [] });
