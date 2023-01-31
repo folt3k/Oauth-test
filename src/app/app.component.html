@@ -1,1 +1,7 @@
-<div #googleSignInWrapper></div>
+<div *ngIf="userInfo; else signInTemp">
+  {{ userInfo.firstName + ' ' + userInfo.lastName }} ({{ userInfo.email }})
+</div>
+
+<ng-template #signInTemp>
+  <div #googleSignInWrapper></div>
+</ng-template>
