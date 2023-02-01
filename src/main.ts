@@ -1,4 +1,5 @@
 /// <reference types="@types/google.accounts" />
+import "globals"
 
 import { bootstrapApplication } from '@angular/platform-browser';
 

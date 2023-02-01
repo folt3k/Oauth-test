@@ -18,7 +18,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('googleSignInWrapper') googleSignInWrapperEl!: ElementRef;
+  @ViewChild('googleSignInWrapper')
+  googleSignInWrapperEl!: ElementRef<HTMLElement>;
 
   userInfo: { firstName: string; lastName: string; email: string } | null =
     null;
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.renderGoogleSignInBtn();
+    googleSignIn.render(this.googleSignInWrapperEl.nativeElement);
   }
 
   private renderGoogleSignInBtn(): void {
